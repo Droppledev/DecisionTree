@@ -26,6 +26,10 @@ def accuracy_metric(actual, predicted):
 
 def get_performance(actual,predicted):
 	tn, fp, fn, tp = confusion_matrix(actual, predicted, labels=list(set(actual))).ravel()
+	print('True Positive :',tp)
+	print('True Negative :',tn)
+	print('False Positive :',fp)
+	print('False Negative :',fn)
 	recall = tp/(tp+fn)
 	precision = tp/(tp+fp)
 	return recall, precision
